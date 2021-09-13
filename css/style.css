@@ -31,12 +31,28 @@ nav {
   background-color: var(--dark-blue);
   padding: 1.2rem;
 }
+.logo h1{
+  font-weight: bolder;
+  font-size: 1.4rem;
+}
+li a{
+  text-decoration: none;
+  color: white;
+}
 
 .col-2 img {
   width: 100%;
   max-width: 300px;
   background-color: var(--light);
   padding: 1rem;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 }
 
 .image-cover img{
@@ -352,6 +368,25 @@ color: white;
   background-color: var(--light);
 }
 
+/* ANIMATION */
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
 
 
 /* Mobile Landscape Screen Sizes */
@@ -381,8 +416,10 @@ color: white;
       color: white;
   }
   .btn{
-      color: black;
+      color: white;
+      border: 2px solid white;
   }
+  
 
   
 
@@ -391,7 +428,22 @@ color: white;
 
 
 
+/* phone screen size button */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
 
+    .btn-custom{
+      color: white;
+      border: none;
+      
+    }
+
+  nav{
+    display: none;
+  }
+}
 
 /* Desktop screen Sizes */
 @media only screen and (min-width: 769px) {
@@ -410,6 +462,10 @@ color: white;
     flex: 0 0 44%;
   }
 
+  .col-2:hover img{
+    animation-name: bounce;
+  -moz-animation-name: bounce;
+  }
 
 
   nav{
@@ -536,13 +592,7 @@ color: white;
     justify-content: center;
     align-items: center;
 }
-.portfolio .portfolio-gallery .item{
-    /* flex: 0 0 33.33%;
-    max-width: 33.33%;
-    position: relative;
-    padding: 8px; */
-  
-}
+
 
 
 .portfolio .portfolio-gallery .item .inner{
@@ -603,17 +653,7 @@ color: white;
     display: none;
 }
 
-@media(max-width:767px){
- 
-    .portfolio .portfolio-gallery .item{
-        /* flex:0 0 50% ;
-        max-width: 50%;
-        position: relative;
-        padding:8px ; */
-    }
 
- 
-}
 /* tablets */
 @media only screen 
   and (min-device-width: 768px) 
