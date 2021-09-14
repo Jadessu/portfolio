@@ -28,3 +28,9 @@ for (let i = 0; i < filterButtons.length; i++) {
 }
 
 
+// ANIMATION
+
+const tl = gsap.timeline({default: {ease: 'power1.out'}})
+
+tl.to(".text", {y:"0%", duration: 1})
+
